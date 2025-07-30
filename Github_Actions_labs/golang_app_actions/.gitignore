@@ -1,0 +1,37 @@
+# Go binaries and build artifacts
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+main
+*.test
+*.out
+
+# Go workspace files
+go.work
+go.work.sum
+
+# Dependency directories
+vendor/
+
+# GoLand IDE
+.idea/
+*.iml
+*.iws
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Docker build context 
+.dockerignore
+
+# GitHub Actions logs 
+.github/workflows/*.log
