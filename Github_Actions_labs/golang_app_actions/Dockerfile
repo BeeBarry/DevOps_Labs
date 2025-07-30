@@ -4,7 +4,7 @@
 FROM golang:1.17-alpine as builder
 WORKDIR /app
 COPY . .
-RUN go build-o main .
+RUN go build -o main .
 
 # Steg 2, här bygger vi en minimal Alpine image som i sin tur använder den kompilerade koden från föregående build stage.
 FROM alpine:latest
