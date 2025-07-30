@@ -1,16 +1,23 @@
-name: CI
+name: golang_app_actions CI
 
 on:
   push:
     branches:
       - main
+    paths:
+      - 'Github_Actions_labs/golang_app_actions/**'
   pull_request:
     branches:
       - main
+    paths:
+      - 'Github_Actions_labs/golang_app_actions/**'
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./Github_Actions_labs/golang_app_actions
 
     steps:
       - name: Checkout code
