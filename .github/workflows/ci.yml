@@ -39,8 +39,10 @@ jobs:
 
       - name: Build Docker image
         run: | 
-          docker build -t ghcr.io/${{ github.repository }}/my-go-app:latest .
+          REPO_LOWER=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+          docker build -t ghcr.io/${REPO_LOWER}/my-go-app:latest .
 
       - name: Push Docker image to GitHub Container Registry
         run: |
-          docker push ghcr.io/${{ github.repository }}/my-go-app:latest
+          REPO_LOWER=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+          docker push ghcr.io/${REPO_LOWER}/my-go-app:latest
